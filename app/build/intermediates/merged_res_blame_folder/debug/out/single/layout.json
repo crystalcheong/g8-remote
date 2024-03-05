@@ -1,34 +1,38 @@
 [
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/fragment_second.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/fragment_second.xml"
-    },
-    {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/popup_window.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/popup_window.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/device_adapter_view.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/device_adapter_view.xml"
     },
     {
         "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/activity_main.xml",
         "source": "scse.g8.remote.app-main-42:/layout/activity_main.xml"
     },
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/content_main.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/content_main.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/popup_window.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/popup_window.xml"
     },
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/fragment_first.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/fragment_first.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/content_main.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/content_main.xml"
     },
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/activity_connect.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/activity_connect.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/activity_connect.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/activity_connect.xml"
     },
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/activity_splash_screen.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/activity_splash_screen.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/activity_splash_screen.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/activity_splash_screen.xml"
     },
     {
-        "merged": "scse.g8.remote.app-mergeDebugResources-39:/layout/device_adapter_view.xml",
-        "source": "scse.g8.remote.app-main-42:/layout/device_adapter_view.xml"
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/fragment_first.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/fragment_first.xml"
+    },
+    {
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/activity_main.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-mergeDebugResources-39:/layout/fragment_second.xml",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/fragment_second.xml"
     }
 ]

@@ -59,7 +59,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.MDPAndroidController.NoActionBar">
+            android:screenOrientation="sensorPortrait"
+            android:theme="@style/Theme.MDPAndroidController.NoActionBar"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,9 +69,12 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".Connect" />
-
-        <service android:name=".BluetoothConnectionService" />
+        <activity
+            android:name=".Connect"
+            android:screenOrientation="sensorPortrait"/>
+        <service
+            android:name=".BluetoothConnectionService"
+            android:screenOrientation="sensorPortrait" />
     </application>
 
 </manifest>

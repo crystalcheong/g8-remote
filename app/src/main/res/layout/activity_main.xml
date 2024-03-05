@@ -72,7 +72,7 @@
             android:layout_marginEnd="32dp"
             android:adjustViewBounds="true"
             android:background="@null"
-            android:backgroundTint="#E40F0F"
+            android:backgroundTint="#7C3AED"
             android:clickable="true"
             android:drawableLeft="@android:drawable/ic_media_play"
             android:drawableTint="@color/white"
@@ -86,26 +86,26 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/generator" />
 
-        <Button
-            android:id="@+id/resetObstacles"
-            android:layout_width="124dp"
-            android:layout_height="45dp"
-            android:layout_marginEnd="32dp"
-            android:adjustViewBounds="true"
-            android:background="@null"
-            android:backgroundTint="#E80F0F"
-            android:clickable="true"
-            android:drawableLeft="@android:drawable/ic_popup_sync"
-            android:drawableTint="@color/white"
-            android:focusable="true"
-            android:fontFamily="monospace"
-            android:maxWidth="40dp"
-            android:maxHeight="40dp"
-            android:scaleType="fitCenter"
-            android:text="RESET"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/preloadObstaclesButton" />
+<!--        <Button-->
+<!--            android:id="@+id/resetObstacles"-->
+<!--            android:layout_width="124dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:background="@null"-->
+<!--            android:backgroundTint="#7C3AED"-->
+<!--            android:clickable="true"-->
+<!--            android:drawableLeft="@android:drawable/ic_popup_sync"-->
+<!--            android:drawableTint="@color/white"-->
+<!--            android:focusable="true"-->
+<!--            android:fontFamily="monospace"-->
+<!--            android:maxWidth="40dp"-->
+<!--            android:maxHeight="40dp"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            android:text="RESET"-->
+<!--            android:textSize="10dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/preloadObstaclesButton" />-->
 
         <Button
             android:id="@+id/connect_button"
@@ -114,7 +114,7 @@
             android:layout_marginEnd="32dp"
             android:adjustViewBounds="true"
             android:background="@null"
-            android:backgroundTint="#E81111"
+            android:backgroundTint="#7C3AED"
             android:clickable="true"
             android:drawableLeft="@android:drawable/stat_sys_data_bluetooth"
             android:drawableTint="@color/white"
@@ -123,10 +123,10 @@
             android:maxWidth="40dp"
             android:maxHeight="40dp"
             android:scaleType="fitCenter"
-            android:text="BLUETOOTH"
+            android:text="Connectr"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/resetObstacles" />
+            app:layout_constraintTop_toBottomOf="@+id/sendMap" />
 
         <Button
             android:id="@+id/discoverableBtn"
@@ -175,7 +175,7 @@
             android:layout_width="138px"
             android:layout_height="138px"
             android:background="#000000"
-            android:src="@drawable/car_1"
+            android:src="@drawable/car_3"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -192,7 +192,7 @@
             android:layout_width="124dp"
             android:layout_height="45dp"
             android:layout_marginEnd="32dp"
-            android:backgroundTint="#FF0000"
+            android:backgroundTint="#7555AD"
             android:drawableLeft="@android:drawable/ic_menu_send"
             android:drawableTint="@color/white"
             android:fontFamily="monospace"
@@ -520,7 +520,7 @@
                 android:id="@+id/initialObstacleBox"
                 android:layout_width="34px"
                 android:layout_height="34px"
-                android:src="@drawable/blue_obstacle"
+                android:src="@drawable/obstacle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -530,7 +530,7 @@
                 android:id="@+id/initialObstacleFace"
                 android:layout_width="34px"
                 android:layout_height="34px"
-                android:src="@drawable/blue_obstacle_face"
+                android:src="@drawable/obstacle_face"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -675,16 +675,16 @@
             </TableRow>
         </TableLayout>
 
-        <Spinner
-            android:id="@+id/numberOfPreloadedObstacles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toStartOf="@+id/connect_button"
-            app:layout_constraintTop_toBottomOf="@+id/d_pad" />
+<!--        <Spinner-->
+<!--            android:id="@+id/numberOfPreloadedObstacles"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:background="@android:drawable/btn_dropdown"-->
+<!--            android:spinnerMode="dropdown"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/d_pad" />-->
 
         <TableLayout
             android:id="@+id/btnTableLayout"
@@ -777,21 +777,21 @@
 
         </TableLayout>
 
-        <Button
-            android:id="@+id/preloadObstaclesButton"
-            android:layout_width="124dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="32dp"
-            android:backgroundTint="#EF0C0C"
-            android:drawableLeft="@android:drawable/ic_menu_upload"
-            android:drawableTint="@color/white"
-            android:drawableTintMode="src_in"
-            android:fontFamily="monospace"
-            android:text="Preload"
-            android:textSize="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sendMap" />
+<!--        <Button-->
+<!--            android:id="@+id/preloadObstaclesButton"-->
+<!--            android:layout_width="124dp"-->
+<!--            android:layout_height="45dp"-->
+<!--            android:layout_marginTop="4dp"-->
+<!--            android:layout_marginEnd="32dp"-->
+<!--            android:backgroundTint="#7555AD"-->
+<!--            android:drawableLeft="@android:drawable/ic_menu_upload"-->
+<!--            android:drawableTint="@color/white"-->
+<!--            android:drawableTintMode="src_in"-->
+<!--            android:fontFamily="monospace"-->
+<!--            android:text="Preload"-->
+<!--            android:textSize="10dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/sendMap" />-->
 
         <ImageButton
             android:id="@+id/generateRobot"
@@ -810,16 +810,185 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:tint="#FFFFFF" />
 
+
+<!--        <TableLayout-->
+<!--            android:id="@+id/d_pad"-->
+<!--            android:layout_width="144dp"-->
+<!--            android:layout_height="144dp"-->
+<!--            android:layout_marginTop="46dp"-->
+<!--            android:layout_marginEnd="25dp"-->
+<!--            android:background="@drawable/border_4"-->
+<!--            android:gravity="center"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/start_robot">-->
+
+<!--            <TableRow-->
+<!--                android:id="@+id/dpad_row1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowNW"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="40dp"-->
+<!--                    android:maxHeight="50dp"-->
+<!--                    android:rotation="315"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_up"-->
+<!--                    android:visibility="visible"-->
+<!--                    tools:layout_editor_absoluteX="367dp"-->
+<!--                    tools:layout_editor_absoluteY="808dp" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowForward"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxHeight="50dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_up"-->
+<!--                    tools:layout_editor_absoluteX="415dp"-->
+<!--                    tools:layout_editor_absoluteY="808dp" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowNE"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="40dp"-->
+<!--                    android:maxHeight="40dp"-->
+<!--                    android:rotation="45"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_up"-->
+<!--                    android:visibility="visible"-->
+<!--                    tools:layout_editor_absoluteX="463dp"-->
+<!--                    tools:layout_editor_absoluteY="808dp" />-->
+<!--            </TableRow>-->
+
+<!--            <TableRow-->
+<!--                android:id="@+id/dpad_row2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowLeft"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="50dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_left"-->
+<!--                    tools:layout_editor_absoluteX="367dp"-->
+<!--                    tools:layout_editor_absoluteY="856dp" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/blank"-->
+<!--                    android:layout_width="45dp"-->
+<!--                    android:layout_height="45dp"-->
+<!--                    android:src="@color/black" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowRight"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="50dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_right"-->
+<!--                    tools:layout_editor_absoluteX="463dp"-->
+<!--                    tools:layout_editor_absoluteY="856dp" />-->
+<!--            </TableRow>-->
+
+<!--            <TableRow-->
+<!--                android:id="@+id/dpad_row3"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center">-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowSW"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="40dp"-->
+<!--                    android:maxHeight="40dp"-->
+<!--                    android:rotation="225"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_up"-->
+<!--                    android:visibility="visible"-->
+<!--                    tools:layout_editor_absoluteX="367dp"-->
+<!--                    tools:layout_editor_absoluteY="904dp" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowBack"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxHeight="50dp"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_down"-->
+<!--                    tools:layout_editor_absoluteX="415dp"-->
+<!--                    tools:layout_editor_absoluteY="904dp" />-->
+
+<!--                <ImageButton-->
+<!--                    android:id="@+id/arrowSE"-->
+<!--                    android:layout_width="35dp"-->
+<!--                    android:layout_height="35dp"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@null"-->
+<!--                    android:clickable="true"-->
+<!--                    android:focusable="true"-->
+<!--                    android:maxWidth="40dp"-->
+<!--                    android:maxHeight="40dp"-->
+<!--                    android:rotation="135"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/arrow_up"-->
+<!--                    android:visibility="visible"-->
+<!--                    tools:layout_editor_absoluteX="463dp"-->
+<!--                    tools:layout_editor_absoluteY="904dp" />-->
+<!--            </TableRow>-->
+
+<!--        </TableLayout>-->
+
+
         <TableLayout
             android:id="@+id/d_pad"
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            android:layout_marginTop="46dp"
-            android:layout_marginEnd="25dp"
+            android:layout_width="215dp"
+            android:layout_height="150dp"
+
             android:background="@drawable/border_4"
-            android:gravity="center"
-            app:layout_constraintEnd_toStartOf="@+id/connect_button"
-            app:layout_constraintTop_toTopOf="@+id/start_robot">
+            android:gravity="center_vertical"
+            app:layout_constraintLeft_toLeftOf="@id/obstacle_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sendMap"
+
+
+            >
 
             <TableRow
                 android:id="@+id/dpad_row1"
@@ -829,48 +998,51 @@
 
                 <ImageButton
                     android:id="@+id/arrowNW"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
-                    android:maxWidth="40dp"
+                    android:maxWidth="50dp"
                     android:maxHeight="50dp"
-                    android:rotation="315"
+                    android:rotation="220"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_up"
+
+                    android:src="@drawable/arrow_right"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="367dp"
                     tools:layout_editor_absoluteY="808dp" />
 
                 <ImageButton
                     android:id="@+id/arrowForward"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
+                    android:maxWidth="50dp"
                     android:maxHeight="50dp"
+                    android:rotation="0"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_up"
+                    android:src="@drawable/arrow_up"
                     tools:layout_editor_absoluteX="415dp"
                     tools:layout_editor_absoluteY="808dp" />
 
                 <ImageButton
                     android:id="@+id/arrowNE"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
-                    android:maxWidth="40dp"
-                    android:maxHeight="40dp"
-                    android:rotation="45"
+                    android:maxWidth="50dp"
+                    android:maxHeight="50dp"
+                    android:rotation="-60"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_up"
+                    android:src="@drawable/arrow_right"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="463dp"
                     tools:layout_editor_absoluteY="808dp" />
@@ -884,37 +1056,49 @@
 
                 <ImageButton
                     android:id="@+id/arrowLeft"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
                     android:maxWidth="50dp"
+                    android:maxHeight="50dp"
+
+                    android:rotation="0"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_left"
+                    android:src="@drawable/arrow_left"
                     tools:layout_editor_absoluteX="367dp"
                     tools:layout_editor_absoluteY="856dp" />
 
-                <ImageView
-                    android:id="@+id/blank"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src="@color/black" />
+                <Button
+                    android:id="@+id/Start"
+                    android:text="Start"
+                    android:textAlignment="center"
+                    android:textColor="#FFF"
+                    android:textSize="9dp"
+                    app:fontFamily="monospace"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:src="#E40F0F"
+                    />
+
 
                 <ImageButton
                     android:id="@+id/arrowRight"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:background="@null"
+                    android:background="@android:color/transparent"
                     android:clickable="true"
                     android:focusable="true"
                     android:maxWidth="50dp"
+                    android:maxHeight="50dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_right"
+                    android:src="@drawable/arrow_right"
                     tools:layout_editor_absoluteX="463dp"
                     tools:layout_editor_absoluteY="856dp" />
+
             </TableRow>
 
             <TableRow
@@ -925,55 +1109,56 @@
 
                 <ImageButton
                     android:id="@+id/arrowSW"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
-                    android:maxWidth="40dp"
-                    android:maxHeight="40dp"
-                    android:rotation="225"
+                    android:maxWidth="50dp"
+                    android:maxHeight="50dp"
+                    android:rotation="-60"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_up"
+                    android:src="@drawable/arrow_left"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="367dp"
                     tools:layout_editor_absoluteY="904dp" />
 
                 <ImageButton
                     android:id="@+id/arrowBack"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
+                    android:maxWidth="50dp"
                     android:maxHeight="50dp"
+                    android:rotation="0"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_down"
+                    android:src="@drawable/arrow_down"
                     tools:layout_editor_absoluteX="415dp"
                     tools:layout_editor_absoluteY="904dp" />
 
                 <ImageButton
                     android:id="@+id/arrowSE"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:background="@null"
                     android:clickable="true"
                     android:focusable="true"
-                    android:maxWidth="40dp"
-                    android:maxHeight="40dp"
-                    android:rotation="135"
+                    android:maxWidth="50dp"
+                    android:maxHeight="50dp"
+                    android:rotation="-220"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/red_arrow_up"
+                    android:src="@drawable/arrow_up"
                     android:visibility="visible"
                     tools:layout_editor_absoluteX="463dp"
                     tools:layout_editor_absoluteY="904dp" />
             </TableRow>
 
         </TableLayout>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

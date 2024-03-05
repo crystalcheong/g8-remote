@@ -4,7 +4,7 @@
             "outputFile": "scse.g8.remote.app-mergeDebugResources-38:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/ccyq/.gradle/caches/transforms-3/db553a5c6ca799cc1614664dc648d615/transformed/appcompat-1.6.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "source": "/Users/ccyq/.gradle/caches/transforms-3/9a7f108ffc51c5460856652b15532e96/transformed/appcompat-1.6.0/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -4,7 +4,7 @@
             "outputFile": "scse.g8.remote.app-mergeDebugResources-38:/values-w1240dp-v13/values-w1240dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/ccyq/Spaces/Android/SC2079/Android/app/src/main/res/values-w1240dp/dimens.xml",
+                    "source": "/Users/ccyq/Spaces/SC2079/OLD/G8Remote/app/src/main/res/values-w1240dp/dimens.xml",
                     "from": {
                         "startLines": "1",
                         "startColumns": "4",

@@ -16,7 +16,11 @@ color teal_700
 color white
 dimen fab_margin
 drawable app_icon
+drawable arrow_down
 drawable arrow_error
+drawable arrow_left
+drawable arrow_right
+drawable arrow_up
 drawable blue_obstacle
 drawable blue_obstacle_face
 drawable bluetooth
@@ -26,6 +30,7 @@ drawable border_3
 drawable border_4
 drawable car_1
 drawable car_2
+drawable car_3
 drawable circlebutton
 drawable connect_button
 drawable delete_button
@@ -37,6 +42,8 @@ drawable loading
 drawable metal
 drawable metal_look
 drawable metal_surface
+drawable obstacle
+drawable obstacle_face
 drawable pacman
 drawable path
 drawable path_button
@@ -60,9 +67,11 @@ drawable roundedbar
 drawable save_icon
 drawable send_message
 drawable start_button
+drawable surface
 font font_family
 font main_font
 id FirstFragment
+id Start
 id action_settings
 id appBarLayout
 id arrowBack
@@ -73,7 +82,6 @@ id arrowNW
 id arrowRight
 id arrowSE
 id arrowSW
-id blank
 id btSend
 id btSend1
 id bt_listavailabledevices
@@ -130,7 +138,6 @@ id nav_graph
 id nav_host_fragment_content_main
 id notifications
 id notificationsHeader
-id numberOfPreloadedObstacles
 id obstacleCoordinates
 id obstacleGenerator
 id obstacleInformation
@@ -142,9 +149,7 @@ id path_Text
 id popup_robotText
 id popup_window
 id popup_window_robot
-id preloadObstaclesButton
 id remove_robot
-id resetObstacles
 id reset_Text
 id reverse_switch
 id robot_Text

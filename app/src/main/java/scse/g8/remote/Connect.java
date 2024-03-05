@@ -13,6 +13,7 @@ import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -198,18 +199,13 @@ public class Connect extends AppCompatActivity {
                         Log.d(TAG, "onItemClick: DeviceAddress = " + deviceAddress);
 
                         //CREATE BOND if > JELLY BEAN
-                        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2) {
-                            Log.d(TAG, "Trying to pair with: " + deviceName);
+                        Log.d(TAG, "Trying to pair with: " + deviceName);
 
-                            //CREATE BOUND WITH SELECTED DEVICE
-                            myBTDevicesArrayList.get(i).createBond();
+                        //CREATE BOUND WITH SELECTED DEVICE
+                        myBTDevicesArrayList.get(i).createBond();
 
-                            //ASSIGN SELECTED DEVICE INFO TO myBTDevice
-                            myBTDevice = myBTDevicesArrayList.get(i);
-
-
-                        }
-
+                        //ASSIGN SELECTED DEVICE INFO TO myBTDevice
+                        myBTDevice = myBTDevicesArrayList.get(i);
                     }
                 }
         );
@@ -262,6 +258,7 @@ public class Connect extends AppCompatActivity {
                     intent1.setFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
                     sendBroadcast(intent1);
 
+                    Constants.setConnected(false);
                     startBTConnection(myBTDevice, myUUID);
                 }
                 lvPairedDevices.setAdapter(myPairedDeviceListAdapter);
@@ -330,40 +327,90 @@ public class Connect extends AppCompatActivity {
             String connectionStatus = intent.getStringExtra("ConnectionStatus");
             myBTConnectionDevice = intent.getParcelableExtra("Device");
 
+            checkBTPermission();
+
+            if(connectionStatus == null) return;
+
             //DISCONNECTED FROM BLUETOOTH CHAT
             if (connectionStatus.equals("disconnect")) {
 
                 Log.d("ConnectAcitvity:", "Device Disconnected");
 
-                //CHECK FOR NOT NULL
-                if (connectIntent != null) {
-                    //Stop Bluetooth Connection Service
-                    stopService(connectIntent);
-                }
-
                 //RECONNECT DIALOG MSG
-                AlertDialog alertDialog = new AlertDialog.Builder(Connect.this).create();
+                android.app.AlertDialog alertDialog = new android.app.AlertDialog.Builder(Connect.this).create();
                 alertDialog.setTitle("BLUETOOTH DISCONNECTED");
-                alertDialog.setMessage("Connection with device: '"+myBTConnectionDevice.getName()+"' has ended. Do you want to reconnect?");
-                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                startBTConnection(myBTConnectionDevice, myUUID);
+                alertDialog.setMessage("Connection with device: " + myBTConnectionDevice.getName() + " has ended. Do you want to reconnect?");
 
-                            }
-                        });
-                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        });
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //START BT CONNECTION SERVICE
+                        Intent connectIntent = new Intent(Connect.this, BluetoothConnectionService.class);
+                        connectIntent.putExtra("serviceType", "connect");
+                        connectIntent.putExtra("device", myBTConnectionDevice);
+                        connectIntent.putExtra("id", myUUID);
+                        startService(connectIntent);
+                    }
+                }, 5000);
+
                 alertDialog.show();
+
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //CLOSE DIALOG
+                        alertDialog.cancel();
+                    }
+                }, 1000);
+
+//                //RECONNECT DIALOG MSG
+//                AlertDialog alertDialog = new AlertDialog.Builder(Connect.this).create();
+//                alertDialog.setTitle("BLUETOOTH DISCONNECTED");
+//                alertDialog.setMessage("Connection with device: '"+myBTConnectionDevice.getName()+"' has ended. Do you want to reconnect?");
+//                alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+//                        new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                Constants.setConnected(false);
+//                                startBTConnection(myBTConnectionDevice, myUUID);
+//                            }
+//                        });
+//                alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+//                        new DialogInterface.OnClickListener() {
+//                            public void onClick(DialogInterface dialog, int which) {
+//                                dialog.dismiss();
+//                            }
+//                        });
+//                alertDialog.show();
+//
+//
+//                // FIX 5: delay btn click
+//                Handler handler = new Handler();
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        checkBTPermission();
+//
+//                        //CHECK FOR NOT NULL
+//                        if (connectIntent != null) {
+//                            //Stop Bluetooth Connection Service
+//                            stopService(connectIntent);
+//
+//                            Constants.setConnected(false);
+//                        }
+//
+//                        Toast.makeText(Connect.this, "Reconnecting (delayed): " + myBTConnectionDevice.getName(),
+//                                Toast.LENGTH_LONG).show();
+//                        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).performClick();
+//
+//
+//                    }
+//                }, 3000);
+
             }
 
             //SUCCESSFULLY CONNECTED TO BLUETOOTH DEVICE
             else if (connectionStatus.equals("connect")) {
-
 
                 Log.d("ConnectAcitvity:", "Device Connected");
                 Toast.makeText(Connect.this, "Connection Established: " + myBTConnectionDevice.getName(),
@@ -433,8 +480,10 @@ public class Connect extends AppCompatActivity {
     private final BroadcastReceiver enableBTBroadcastReceiver = new BroadcastReceiver() {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            if (action.equals(myBluetoothAdapter.ACTION_STATE_CHANGED)) {
-                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, myBluetoothAdapter.ERROR);
+
+            if(action == null) return;
+            if (action.equals(BluetoothAdapter.ACTION_STATE_CHANGED)) {
+                final int state = intent.getIntExtra(BluetoothAdapter.EXTRA_STATE, BluetoothAdapter.ERROR);
 
                 switch (state) {
                     //BLUETOOTH TURNED OFF STATE
@@ -793,6 +842,8 @@ public class Connect extends AppCompatActivity {
         START BLUETOOTH CHAT SERVICE METHOD
     */
     public void startBTConnection(BluetoothDevice device, UUID uuid) {
+
+        if(Constants.connected) return;
 
         Log.d(TAG, "StartBTConnection: Initializing RFCOM Bluetooth Connection");
 

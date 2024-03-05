@@ -32,6 +32,9 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final Button Start;
+
+  @NonNull
   public final AppBarLayout appBarLayout;
 
   @NonNull
@@ -57,9 +60,6 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public final ImageButton arrowSW;
-
-  @NonNull
-  public final ImageView blank;
 
   @NonNull
   public final TableLayout btnTableLayout;
@@ -155,9 +155,6 @@ public final class ActivityMainBinding implements ViewBinding {
   public final TextView notificationsHeader;
 
   @NonNull
-  public final Spinner numberOfPreloadedObstacles;
-
-  @NonNull
   public final ImageView obstacleBackground;
 
   @NonNull
@@ -185,13 +182,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final ConstraintLayout popupWindowRobot;
 
   @NonNull
-  public final Button preloadObstaclesButton;
-
-  @NonNull
   public final Button removeRobot;
-
-  @NonNull
-  public final Button resetObstacles;
 
   @NonNull
   public final TextView resetText;
@@ -247,11 +238,11 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Toolbar toolbar;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull Button Start,
       @NonNull AppBarLayout appBarLayout, @NonNull ImageButton arrowBack,
       @NonNull ImageButton arrowForward, @NonNull ImageButton arrowLeft,
       @NonNull ImageButton arrowNE, @NonNull ImageButton arrowNW, @NonNull ImageButton arrowRight,
-      @NonNull ImageButton arrowSE, @NonNull ImageButton arrowSW, @NonNull ImageView blank,
+      @NonNull ImageButton arrowSE, @NonNull ImageButton arrowSW,
       @NonNull TableLayout btnTableLayout, @NonNull TableRow btnfirstRow,
       @NonNull ImageButton calculate, @NonNull Button connectButton, @NonNull TextView connectText,
       @NonNull CoordinatorLayout coordinatorlayout, @NonNull TableLayout dPad,
@@ -265,20 +256,20 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull ImageView initialObstacleBox, @NonNull ImageView initialObstacleFace,
       @NonNull TextView initialObstacleId, @NonNull MapArena mapView,
       @NonNull TextView notifications, @NonNull TextView notificationsHeader,
-      @NonNull Spinner numberOfPreloadedObstacles, @NonNull ImageView obstacleBackground,
-      @NonNull TextView obstacleCoordinates, @NonNull TextView obstacleGenerator,
-      @NonNull TableLayout obstacleInformation, @NonNull TextView pacbotGenerator,
-      @NonNull TextView pathText, @NonNull TextView popupRobotText,
-      @NonNull ConstraintLayout popupWindow, @NonNull ConstraintLayout popupWindowRobot,
-      @NonNull Button preloadObstaclesButton, @NonNull Button removeRobot,
-      @NonNull Button resetObstacles, @NonNull TextView resetText, @NonNull Switch reverseSwitch,
-      @NonNull TextView robotLocation, @NonNull TextView robotLocationHeader,
-      @NonNull TextView robotText, @NonNull ImageView robotcar, @NonNull Button saveButton,
-      @NonNull TableRow secondBtnRow, @NonNull TableRow secondRow, @NonNull Button sendMap,
-      @NonNull Spinner spinnerRobotFacing, @NonNull Spinner spinnerRobotX,
-      @NonNull Spinner spinnerRobotY, @NonNull Button startRobot, @NonNull TextView startText,
-      @NonNull TableLayout textTableLayout, @NonNull TableRow thirdRow, @NonNull Toolbar toolbar) {
+      @NonNull ImageView obstacleBackground, @NonNull TextView obstacleCoordinates,
+      @NonNull TextView obstacleGenerator, @NonNull TableLayout obstacleInformation,
+      @NonNull TextView pacbotGenerator, @NonNull TextView pathText,
+      @NonNull TextView popupRobotText, @NonNull ConstraintLayout popupWindow,
+      @NonNull ConstraintLayout popupWindowRobot, @NonNull Button removeRobot,
+      @NonNull TextView resetText, @NonNull Switch reverseSwitch, @NonNull TextView robotLocation,
+      @NonNull TextView robotLocationHeader, @NonNull TextView robotText,
+      @NonNull ImageView robotcar, @NonNull Button saveButton, @NonNull TableRow secondBtnRow,
+      @NonNull TableRow secondRow, @NonNull Button sendMap, @NonNull Spinner spinnerRobotFacing,
+      @NonNull Spinner spinnerRobotX, @NonNull Spinner spinnerRobotY, @NonNull Button startRobot,
+      @NonNull TextView startText, @NonNull TableLayout textTableLayout, @NonNull TableRow thirdRow,
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.Start = Start;
     this.appBarLayout = appBarLayout;
     this.arrowBack = arrowBack;
     this.arrowForward = arrowForward;
@@ -288,7 +279,6 @@ public final class ActivityMainBinding implements ViewBinding {
     this.arrowRight = arrowRight;
     this.arrowSE = arrowSE;
     this.arrowSW = arrowSW;
-    this.blank = blank;
     this.btnTableLayout = btnTableLayout;
     this.btnfirstRow = btnfirstRow;
     this.calculate = calculate;
@@ -320,7 +310,6 @@ public final class ActivityMainBinding implements ViewBinding {
     this.mapView = mapView;
     this.notifications = notifications;
     this.notificationsHeader = notificationsHeader;
-    this.numberOfPreloadedObstacles = numberOfPreloadedObstacles;
     this.obstacleBackground = obstacleBackground;
     this.obstacleCoordinates = obstacleCoordinates;
     this.obstacleGenerator = obstacleGenerator;
@@ -330,9 +319,7 @@ public final class ActivityMainBinding implements ViewBinding {
     this.popupRobotText = popupRobotText;
     this.popupWindow = popupWindow;
     this.popupWindowRobot = popupWindowRobot;
-    this.preloadObstaclesButton = preloadObstaclesButton;
     this.removeRobot = removeRobot;
-    this.resetObstacles = resetObstacles;
     this.resetText = resetText;
     this.reverseSwitch = reverseSwitch;
     this.robotLocation = robotLocation;
@@ -380,6 +367,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Start;
+      Button Start = ViewBindings.findChildViewById(rootView, id);
+      if (Start == null) {
+        break missingId;
+      }
+
       id = R.id.appBarLayout;
       AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
       if (appBarLayout == null) {
@@ -431,12 +424,6 @@ public final class ActivityMainBinding implements ViewBinding {
       id = R.id.arrowSW;
       ImageButton arrowSW = ViewBindings.findChildViewById(rootView, id);
       if (arrowSW == null) {
-        break missingId;
-      }
-
-      id = R.id.blank;
-      ImageView blank = ViewBindings.findChildViewById(rootView, id);
-      if (blank == null) {
         break missingId;
       }
 
@@ -623,12 +610,6 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.numberOfPreloadedObstacles;
-      Spinner numberOfPreloadedObstacles = ViewBindings.findChildViewById(rootView, id);
-      if (numberOfPreloadedObstacles == null) {
-        break missingId;
-      }
-
       id = R.id.obstacle_background;
       ImageView obstacleBackground = ViewBindings.findChildViewById(rootView, id);
       if (obstacleBackground == null) {
@@ -683,21 +664,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.preloadObstaclesButton;
-      Button preloadObstaclesButton = ViewBindings.findChildViewById(rootView, id);
-      if (preloadObstaclesButton == null) {
-        break missingId;
-      }
-
       id = R.id.remove_robot;
       Button removeRobot = ViewBindings.findChildViewById(rootView, id);
       if (removeRobot == null) {
-        break missingId;
-      }
-
-      id = R.id.resetObstacles;
-      Button resetObstacles = ViewBindings.findChildViewById(rootView, id);
-      if (resetObstacles == null) {
         break missingId;
       }
 
@@ -809,19 +778,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, appBarLayout, arrowBack,
-          arrowForward, arrowLeft, arrowNE, arrowNW, arrowRight, arrowSE, arrowSW, blank,
-          btnTableLayout, btnfirstRow, calculate, connectButton, connectText, coordinatorlayout,
-          dPad, discoverableBtn, dpadRow1, dpadRow2, dpadRow3, editText, faceEast, faceNorth,
-          faceSouth, faceWest, finaliseRobot, firstRow, fourthRow, fullScreen, generateRobot,
-          generator, generatorHeader, binding_include, initialObstacle, initialObstacleBox,
+      return new ActivityMainBinding((CoordinatorLayout) rootView, Start, appBarLayout, arrowBack,
+          arrowForward, arrowLeft, arrowNE, arrowNW, arrowRight, arrowSE, arrowSW, btnTableLayout,
+          btnfirstRow, calculate, connectButton, connectText, coordinatorlayout, dPad,
+          discoverableBtn, dpadRow1, dpadRow2, dpadRow3, editText, faceEast, faceNorth, faceSouth,
+          faceWest, finaliseRobot, firstRow, fourthRow, fullScreen, generateRobot, generator,
+          generatorHeader, binding_include, initialObstacle, initialObstacleBox,
           initialObstacleFace, initialObstacleId, mapView, notifications, notificationsHeader,
-          numberOfPreloadedObstacles, obstacleBackground, obstacleCoordinates, obstacleGenerator,
-          obstacleInformation, pacbotGenerator, pathText, popupRobotText, popupWindow,
-          popupWindowRobot, preloadObstaclesButton, removeRobot, resetObstacles, resetText,
-          reverseSwitch, robotLocation, robotLocationHeader, robotText, robotcar, saveButton,
-          secondBtnRow, secondRow, sendMap, spinnerRobotFacing, spinnerRobotX, spinnerRobotY,
-          startRobot, startText, textTableLayout, thirdRow, toolbar);
+          obstacleBackground, obstacleCoordinates, obstacleGenerator, obstacleInformation,
+          pacbotGenerator, pathText, popupRobotText, popupWindow, popupWindowRobot, removeRobot,
+          resetText, reverseSwitch, robotLocation, robotLocationHeader, robotText, robotcar,
+          saveButton, secondBtnRow, secondRow, sendMap, spinnerRobotFacing, spinnerRobotX,
+          spinnerRobotY, startRobot, startText, textTableLayout, thirdRow, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

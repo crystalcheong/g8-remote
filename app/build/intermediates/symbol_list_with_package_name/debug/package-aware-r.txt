@@ -2597,7 +2597,11 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable app_icon
+drawable arrow_down
 drawable arrow_error
+drawable arrow_left
+drawable arrow_right
+drawable arrow_up
 drawable avd_hide_password
 drawable avd_show_password
 drawable blue_obstacle
@@ -2617,6 +2621,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable car_1
 drawable car_2
+drawable car_3
 drawable circlebutton
 drawable connect_button
 drawable delete_button
@@ -2710,6 +2715,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable obstacle
+drawable obstacle_face
 drawable pacman
 drawable path
 drawable path_button
@@ -2733,6 +2740,7 @@ drawable roundedbar
 drawable save_icon
 drawable send_message
 drawable start_button
+drawable surface
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2751,6 +2759,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Start
 id TOP_END
 id TOP_START
 id accelerate
@@ -2842,7 +2851,6 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
-id blank
 id blocking
 id bottom
 id bounce
@@ -3124,7 +3132,6 @@ id notification_main_column
 id notification_main_column_container
 id notifications
 id notificationsHeader
-id numberOfPreloadedObstacles
 id obstacleCoordinates
 id obstacleGenerator
 id obstacleInformation
@@ -3156,7 +3163,6 @@ id popup_window
 id popup_window_robot
 id position
 id postLayout
-id preloadObstaclesButton
 id pressed
 id progress_circular
 id progress_horizontal
@@ -3164,7 +3170,6 @@ id radio
 id ratio
 id rectangles
 id remove_robot
-id resetObstacles
 id reset_Text
 id reverseSawtooth
 id reverse_switch

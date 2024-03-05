@@ -4,7 +4,7 @@
             "outputFile": "scse.g8.remote.app-mergeDebugResources-38:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "/Users/ccyq/.gradle/caches/transforms-3/387d74ca268821fd6447c19f33a7a9ba/transformed/material-1.7.0/res/values-small-v4/values-small-v4.xml",
+                    "source": "/Users/ccyq/.gradle/caches/transforms-3/1a89918c46c0d4b6af4c4bff4491bb06/transformed/material-1.7.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

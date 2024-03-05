@@ -1,0 +1,3 @@
+scse.g8.remote.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme
