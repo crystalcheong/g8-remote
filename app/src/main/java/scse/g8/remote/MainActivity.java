@@ -361,80 +361,373 @@ public class MainActivity extends AppCompatActivity {
         obstacleBoxViews.add(initialObstacleBox);
         obstacleFaceViews2.put(1, initialObstacleFace);
         obstacleTextViews.put(1, initialObstacleId);
-//        Button preloadObstaclesButton = (Button) findViewById(R.id.preloadObstaclesButton);
-//        Spinner spinner = findViewById(R.id.numberOfPreloadedObstacles);
+////        Button preloadObstaclesButton = (Button) findViewById(R.id.preloadObstaclesButton);
+////        Spinner spinner = findViewById(R.id.numberOfPreloadedObstacles);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+//                this,
+//                R.array.number_of_obstacles_to_preload,
+//                android.R.layout.simple_spinner_item
+//        );
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+////        spinner.setAdapter(adapter);
+//        ViewGroup parentView = (ViewGroup) map.getParent();
+////        preloadObstaclesButton.setOnClickListener(new View.OnClickListener() {
+////                                                      @Override
+////                                                      public void onClick(View view) {
+////                                                          String userInput = spinner.getSelectedItem().toString();
+////                                                          int numberOfObstacles = 0;
+////                                                          try {
+////                                                              numberOfObstacles = Integer.parseInt(userInput);
+////                                                          } catch (NumberFormatException e) {
+////                                                              numberOfObstacles = 0;
+////                                                          }
+////                                                          int mapCellSize = (int) map.getCellSize();
+////                                                          int xMapCoordinate = 19;
+////                                                          int yMapCoordinate = 1;
+////                                                          for (int j = 0; j < numberOfObstacles; j++) {
+////                                                              int newObstacleNumber = obstacleViews.size() + 1;
+////                                                              while (obstacleViews.get(newObstacleNumber) != null) {
+////                                                                  newObstacleNumber++;
+////                                                              }
+////                                                              ConstraintLayout newObstacle = createNewObstacle(newObstacleNumber);
+////                                                              ConstraintLayout fullScreen = findViewById(R.id.fullScreen);
+////                                                              ConstraintSet constraintSet = new ConstraintSet();
+////                                                              constraintSet.clone(fullScreen);
+////                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.START);
+////                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.END);
+////                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.TOP);
+////                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.BOTTOM);
+////                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.START, R.id.fullScreen, ConstraintSet.START);
+////                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.TOP, R.id.fullScreen, ConstraintSet.TOP);
+////                                                              // Apply the constraints to the parent ConstraintLayout
+////                                                              constraintSet.applyTo(fullScreen);
+////                                                              int xCoordinate = ((xMapCoordinate + 1) * mapCellSize) + (int) map.getX();
+////                                                              int yCoordinate = ((19 - yMapCoordinate) * mapCellSize) + (int) map.getY();
+////                                                              map.insertNewObstacleIntoArena(newObstacleNumber, xCoordinate, yCoordinate);
+////                                                              latestObstacleCoordinates.put(newObstacleNumber, new int[]{xCoordinate, yCoordinate});
+////                                                              newObstacle.setX(xCoordinate);
+////                                                              newObstacle.setY(yCoordinate);
+////                                                              map.generateObstacleInformationTableRows(obstacleInformationTable, obstacleViews, parentView, outputNotifView, latestObstacleCoordinates);
+////                                                              map.invalidate();
+////                                                              // Notification
+////                                                              outputNotif = String.format("Obstacle: %d, Col: %d, Row: %d", newObstacleNumber, xMapCoordinate, yMapCoordinate);
+////                                                              outputNotifView.setText(outputNotif);
+////                    /*if (Constants.connected) {
+////                        byte[] bytes = outputNotif.getBytes(Charset.defaultCharset());
+////                        BluetoothChat.writeMsg(bytes);
+////                    }*/
+////                                                              yMapCoordinate += 2;
+////                                                              // Check that popup still opens (if branch)
+////                                                          }
+////                                                      }
+////                                                  }
+////        );
+
+        // PRELOAD
+        Button preloadObstaclesButton = (Button) findViewById(R.id.preloadObstaclesButton);
+        Spinner spinner = findViewById(R.id.numberOfPreloadedObstacles);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.number_of_obstacles_to_preload,
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//        spinner.setAdapter(adapter);
+        spinner.setAdapter(adapter);
         ViewGroup parentView = (ViewGroup) map.getParent();
-//        preloadObstaclesButton.setOnClickListener(new View.OnClickListener() {
-//                                                      @Override
-//                                                      public void onClick(View view) {
-//                                                          String userInput = spinner.getSelectedItem().toString();
-//                                                          int numberOfObstacles = 0;
-//                                                          try {
-//                                                              numberOfObstacles = Integer.parseInt(userInput);
-//                                                          } catch (NumberFormatException e) {
-//                                                              numberOfObstacles = 0;
-//                                                          }
-//                                                          int mapCellSize = (int) map.getCellSize();
-//                                                          int xMapCoordinate = 19;
-//                                                          int yMapCoordinate = 1;
-//                                                          for (int j = 0; j < numberOfObstacles; j++) {
-//                                                              int newObstacleNumber = obstacleViews.size() + 1;
-//                                                              while (obstacleViews.get(newObstacleNumber) != null) {
-//                                                                  newObstacleNumber++;
-//                                                              }
-//                                                              ConstraintLayout newObstacle = createNewObstacle(newObstacleNumber);
-//                                                              ConstraintLayout fullScreen = findViewById(R.id.fullScreen);
-//                                                              ConstraintSet constraintSet = new ConstraintSet();
-//                                                              constraintSet.clone(fullScreen);
-//                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.START);
-//                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.END);
-//                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.TOP);
-//                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.BOTTOM);
-//                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.START, R.id.fullScreen, ConstraintSet.START);
-//                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.TOP, R.id.fullScreen, ConstraintSet.TOP);
-//                                                              // Apply the constraints to the parent ConstraintLayout
-//                                                              constraintSet.applyTo(fullScreen);
-//                                                              int xCoordinate = ((xMapCoordinate + 1) * mapCellSize) + (int) map.getX();
-//                                                              int yCoordinate = ((19 - yMapCoordinate) * mapCellSize) + (int) map.getY();
-//                                                              map.insertNewObstacleIntoArena(newObstacleNumber, xCoordinate, yCoordinate);
-//                                                              latestObstacleCoordinates.put(newObstacleNumber, new int[]{xCoordinate, yCoordinate});
-//                                                              newObstacle.setX(xCoordinate);
-//                                                              newObstacle.setY(yCoordinate);
-//                                                              map.generateObstacleInformationTableRows(obstacleInformationTable, obstacleViews, parentView, outputNotifView, latestObstacleCoordinates);
-//                                                              map.invalidate();
-//                                                              // Notification
-//                                                              outputNotif = String.format("Obstacle: %d, Col: %d, Row: %d", newObstacleNumber, xMapCoordinate, yMapCoordinate);
-//                                                              outputNotifView.setText(outputNotif);
-//                    /*if (Constants.connected) {
-//                        byte[] bytes = outputNotif.getBytes(Charset.defaultCharset());
-//                        BluetoothChat.writeMsg(bytes);
-//                    }*/
-//                                                              yMapCoordinate += 2;
-//                                                              // Check that popup still opens (if branch)
-//                                                          }
-//                                                      }
-//                                                  }
-//        );
+        preloadObstaclesButton.setOnClickListener(new View.OnClickListener() {
+                                                      @Override
+                                                      public void onClick(View view) {
+                                                          reset(obstacleInformationTable, parentView);
+                                                          String userInput = spinner.getSelectedItem().toString();
+                                                          ArrayList<String> faces = new ArrayList<>();
 
-        Button start = (Button) findViewById(R.id.Start);
-        start.setOnClickListener(new View.OnClickListener() {
-                                     @Override
-                                     public void onClick(View view) {
-                                         Log.d("MainActivity/+id.Start:", "Attempting to send map data");
+                                                          int mapCellSize = (int) map.getCellSize();
+                                                          int xMapCoordinate = 1;
+                                                          int yMapCoordinate = 19;
+                                                          obstacleViews.clear();
 
-                                         // Notification
-                                         //outputNotif = String.format("Obstacle: %d, Row: %d, Col: %d", newObstacleNumber, xMapCoordinate, yMapCoordinate);
-                                         outputNotifView.setText(outputNotif);
-                                     }
-                                 }
+                                                          ArrayList<Integer> xVal = new ArrayList<>();
+                                                          ArrayList<Integer> yVal = new ArrayList<>();
+
+                                                          boolean isPresetSelected = userInput.length() > 0;
+
+                                                          // COORDS
+                                                          switch(userInput){
+                                                              case "mon testing":{
+//                                                                  # mon testing (y,x)
+//                                                                  1(10,190,S)
+//                                                                  2(60,70,S)
+//                                                                  3(150,20,W)
+//                                                                  4(110,120,W)
+//                                                                  5(110,130,E)
+//                                                                  6(190,80,W)
+//                                                                  7(170,180,S)
+
+                                                                  xVal.addAll(Arrays.asList(1, 6, 15, 11, 11, 19, 17));
+                                                                  yVal.addAll(Arrays.asList(19, 7, 2, 12, 13, 8, 18));
+                                                                  faces.addAll(Arrays.asList("S", "S", "W", "W", "E", "W", "S"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "2021 s2 run 1":{
+//                                                                  # 2021 s2 run 1 (y,x)
+//                                                                  _obstacles = [
+//                                                                      Obstacle(10, 180, Direction.SOUTH),
+//                                                                      Obstacle(60, 120, Direction.NORTH),
+//                                                                      Obstacle(140, 160, Direction.WEST),
+//                                                                      Obstacle(100, 60, Direction.EAST),
+//                                                                      Obstacle(130, 20, Direction.EAST),
+//                                                                      Obstacle(180, 90, Direction.WEST)
+//                                                                  ]
+
+//                                                                  y = (18, 12, 16, 6, 13, 9)
+//                                                                  x = (10, 6, 14, 10, 2, 18)
+//                                                                  dir = ("S", "N", "W", "E", "E", "W")
+
+                                                                  yVal.addAll(Arrays.asList(18, 12, 16, 6, 13, 9));
+                                                                  xVal.addAll(Arrays.asList(10, 6, 14, 10, 2, 18));
+                                                                  faces.addAll(Arrays.asList("S", "N", "W", "E", "E", "W"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "2021 s2 run 2":{
+//                                                                  # 2021 s2 run 2
+//                                                                  obstacles = [
+//                                                                      Obstacle(110, 40, Direction.WEST),
+//                                                                      Obstacle(60, 100, Direction.SOUTH),
+//                                                                      Obstacle(10, 160, Direction.SOUTH),
+//                                                                      Obstacle(130, 140, Direction.SOUTH),
+//                                                                      Obstacle(180, 30, Direction.NORTH),
+//                                                                      Obstacle(180, 160, Direction.SOUTH)
+//                                                                  ]
+//                                                                  y = (4, 10, 16, 14, 3, 16)
+//                                                                  x = (11, 6, 1, 13, 18, 18)
+//                                                                  dir = ("W", "S", "S", "S", "N", "S")
+
+                                                                  yVal.addAll(Arrays.asList(4, 10, 16, 14, 3, 16));
+                                                                  xVal.addAll(Arrays.asList(11, 6, 1, 13, 18, 18));
+                                                                  faces.addAll(Arrays.asList("W", "S", "S", "S", "N", "S"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "2022 s1 run 1":{
+//                                                                  # 2022 s1 run 1
+//                                                                  _obstacles = [
+//                                                                    Obstacle(20, 120, Direction.NORTH),
+//                                                                      Obstacle(100, 60, Direction.EAST),
+//                                                                      Obstacle(110, 180, Direction.SOUTH),
+//                                                                      Obstacle(190, 150, Direction.WEST),
+//                                                                      Obstacle(150, 90, Direction.NORTH),
+//                                                                      Obstacle(180, 20, Direction.WEST)
+//                                                                  ]
+
+//                                                                  y = (12, 6, 18, 15, 9, 2)
+//                                                                  x = (20, 10, 11, 19, 15, 18)
+//                                                                  dir = ("N", "E", "S", "W", "N", "W")
+
+                                                                  yVal.addAll(Arrays.asList(12, 6, 18, 15, 9, 2));
+                                                                  xVal.addAll(Arrays.asList(20, 10, 11, 19, 15, 18));
+                                                                  faces.addAll(Arrays.asList("N", "E", "S", "W", "N", "W"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "2023 s1 run 1":{
+//                                                                  # 2023 s1 run 1
+//                                                                  _obstacles = [
+//                                                                      Obstacle(10, 160, Direction.EAST),
+//                                                                      Obstacle(50, 120, Direction.SOUTH),
+//                                                                      Obstacle(80, 50, Direction.NORTH),
+//                                                                      Obstacle(110, 140, Direction.EAST),
+//                                                                      Obstacle(150, 20, Direction.WEST),
+//                                                                      Obstacle(160, 190, Direction.SOUTH),
+//                                                                      Obstacle(190, 90, Direction.WEST)
+//                                                                  ]
+//                                                                  y = (16, 12, 5, 14, 2, 19, 9)
+//                                                                  x = (10, 5, 8, 11, 15, 16, 19)
+//                                                                  dir = ("E", "S", "N", "E", "W", "S", "W")
+
+                                                                  yVal.addAll(Arrays.asList(16, 12, 5, 14, 2, 19, 9));
+                                                                  xVal.addAll(Arrays.asList(10, 5, 8, 11, 15, 16, 19));
+                                                                  faces.addAll(Arrays.asList("E", "S", "N", "E", "W", "S", "W"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "testing 1":{
+//                                                                  # testing 1
+//                                                                  _obstacles = [
+//                                                                      Obstacle(50, 150, Direction.EAST),
+//                                                                      Obstacle(30, 80, Direction.SOUTH),
+//                                                                      Obstacle(120, 30, Direction.EAST),
+//                                                                      Obstacle(90, 110, Direction.WEST),
+//                                                                      Obstacle(150, 90, Direction.NORTH),
+//                                                                      Obstacle(70, 80, Direction.NORTH),
+//                                                                      Obstacle(180, 180, Direction.SOUTH),
+//                                                                      Obstacle(20, 80, Direction.NORTH)
+//                                                                  ]
+
+//                                                                  y = (15, 8, 30, 11, 9, 8, 18, 8)
+//                                                                  x = (5, 3, 12, 9, 15, 7, 18, 2)
+//                                                                  dir = ("E", "S", "E", "W", "N", "N", "S", "N")
+
+                                                                  yVal.addAll(Arrays.asList(15, 8, 30, 11, 9, 8, 18, 8));
+                                                                  xVal.addAll(Arrays.asList(5, 3, 12, 9, 15, 7, 18, 2));
+                                                                  faces.addAll(Arrays.asList("E", "S", "E", "W", "N", "N", "S", "N"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "testing 2":{
+//                                                                  y = (7, 15, 4, 13, 13, 2, 4, 3)
+//                                                                  x = (10, 10, 8, 10, 11, 12, 12, 16)
+//                                                                  dir = ("S", "S", "W", "W", "S", "W", "N", "N")
+
+                                                                  yVal.addAll(Arrays.asList(7, 15, 4, 13, 13, 2, 4, 3));
+                                                                  xVal.addAll(Arrays.asList(10, 10, 8, 10, 11, 12, 12, 16));
+                                                                  faces.addAll(Arrays.asList("S", "S", "W", "W", "S", "W", "N", "N"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "testing 3":{
+//                                                                  y = (12, 10, 9, 2, 15, 11)
+//                                                                  x = (20, 6, 15, 18, 2, 18)
+//                                                                  dir = ("N", "E", "N", "W", "W", "S")
+
+                                                                  yVal.addAll(Arrays.asList(12, 10, 9, 2, 15, 11));
+                                                                  xVal.addAll(Arrays.asList(20, 6, 15, 18, 2, 18));
+                                                                  faces.addAll(Arrays.asList("N", "E", "N", "W", "W", "S"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "testing 4":{
+//                                                                  y = (6, 12, 11, 9, 2, 16)
+//                                                                  x = (10, 5, 18, 15, 17, 15)
+//                                                                  dir = ("N", "S", "S", "S", "W", "W")
+
+                                                                  yVal.addAll(Arrays.asList(6, 12, 11, 9, 2, 16));
+                                                                  xVal.addAll(Arrays.asList(10, 5, 18, 15, 17, 15));
+                                                                  faces.addAll(Arrays.asList("N", "S", "S", "S", "W", "W"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "thurs testing 1":{
+                                                                  yVal.addAll(Arrays.asList(18, 1, 9, 5, 1, 18, 14, 19));
+                                                                  xVal.addAll(Arrays.asList(10, 5, 5, 9, 16, 19, 11, 9));
+                                                                  faces.addAll(Arrays.asList("S", "E", "S", "W", "W", "S", "N", "W"));
+
+                                                                  break;
+                                                              }
+
+                                                              case "thurs testing 2":{
+                                                                  yVal.addAll(Arrays.asList(11, 12, 10, 0, 9, 2, 15, 18));
+                                                                  xVal.addAll(Arrays.asList(20, 20, 6, 8, 15, 18, 19, 11));
+                                                                  faces.addAll(Arrays.asList("S", "N", "E", "N", "S", "N", "W", "S"));
+
+                                                                  break;
+                                                              }
+
+                                                              default:{
+                                                                  isPresetSelected = false;
+                                                                  break;
+                                                              }
+                                                          }
+
+                                                          if(!isPresetSelected) return;
+
+                                                          // POPULATE COORDS
+                                                          int newObstacleNumber = 1;
+                                                          for (int i = 0; i < faces.size(); i++) {
+                                                              ConstraintLayout newObstacle = createNewObstacle(newObstacleNumber);
+                                                              ConstraintLayout fullScreen = findViewById(R.id.fullScreen);
+                                                              ConstraintSet constraintSet = new ConstraintSet();
+                                                              constraintSet.clone(fullScreen);
+                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.START);
+                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.END);
+                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.TOP);
+                                                              constraintSet.clear(newObstacle.getId(), ConstraintSet.BOTTOM);
+                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.START, R.id.fullScreen, ConstraintSet.START);
+                                                              constraintSet.connect(newObstacle.getId(), ConstraintSet.TOP, R.id.fullScreen, ConstraintSet.TOP);
+
+                                                              // Apply the constraints to the parent ConstraintLayout
+                                                              constraintSet.applyTo(fullScreen);
+
+//                                                                  int xCoordinate = set.getKey();
+//                                                                  int yCoordinate = set.getValue();
+
+                                                              int xCoordinate = ((xVal.get(i) + 1) * mapCellSize) + (int) map.getX();
+                                                              int yCoordinate = ((19 - yVal.get(i)) * mapCellSize) + (int) map.getY();
+
+                                                              Log.d("x", Integer.toString(xCoordinate));
+                                                              Log.d("y", Integer.toString(yCoordinate));
+                                                              //map.insertNewObstacleIntoArena(newObstacleNumber, xCoordinate, yCoordinate);
+
+                                                              map.setObstacleCoord(new int[]{xCoordinate, yCoordinate});
+
+                                                              String face = faces.get(i);
+                                                              ObstacleDetails newObstacleDetails = new ObstacleDetails();
+                                                              newObstacleDetails.setCoordinates(new int[]{xVal.get(i), yVal.get(i)});
+                                                              obstacleFaceCur = obstacleFaceViews2.get(newObstacleNumber);
+
+                                                              if (face.equals("N")) {
+                                                                  obstacleFaceCur.setRotation(0);
+                                                                  obstacleFaceCur.setVisibility(View.VISIBLE);
+                                                                  newObstacleDetails.setObstacleFace(ObstacleDetails.ObstacleFace.NORTH);
+                                                              } else if (face.equals("E")) {
+                                                                  obstacleFaceCur.setRotation(90);
+                                                                  obstacleFaceCur.setVisibility(View.VISIBLE);
+                                                                  newObstacleDetails.setObstacleFace(ObstacleDetails.ObstacleFace.EAST);
+                                                              } else if (face.equals("S")) {
+                                                                  obstacleFaceCur.setRotation(180);
+                                                                  obstacleFaceCur.setVisibility(View.VISIBLE);
+                                                                  newObstacleDetails.setObstacleFace(ObstacleDetails.ObstacleFace.SOUTH);
+                                                              } else if (face.equals("W")) {
+                                                                  obstacleFaceCur.setRotation(270);
+                                                                  obstacleFaceCur.setVisibility(View.VISIBLE);
+                                                                  newObstacleDetails.setObstacleFace(ObstacleDetails.ObstacleFace.WEST);
+                                                              }
+
+                                                              Log.d("obs", face);
+
+
+                                                              System.out.println(String.format("insert new obstacle coordinates: %d, %d", xCoordinate, yCoordinate));
+                                                              map.obstacleInformation.put(newObstacleNumber, newObstacleDetails);
+
+                                                              latestObstacleCoordinates.put(newObstacleNumber, new int[]{xVal.get(i), yVal.get(i)});
+                                                              newObstacle.setX(xCoordinate);
+                                                              newObstacle.setY(yCoordinate);
+                                                              newObstacleNumber++;
+
+                                                          }
+
+                                                          map.generateObstacleInformationTableRows(obstacleInformationTable, obstacleViews, parentView, outputNotifView, latestObstacleCoordinates);
+                                                          map.invalidate();
+                                                          // Notification
+                                                          outputNotif = String.format("Obstacle: %d, Row: %d, Col: %d", newObstacleNumber, xMapCoordinate, yMapCoordinate);
+                                                          outputNotifView.setText(outputNotif);
+
+                                                      }
+                                                  }
         );
+
+//        Button start = (Button) findViewById(R.id.Start);
+//        start.setOnClickListener(new View.OnClickListener() {
+//                                     @Override
+//                                     public void onClick(View view) {
+//                                         Log.d("MainActivity/+id.Start:", "Attempting to send map data");
+//
+//                                         // Notification
+//                                         //outputNotif = String.format("Obstacle: %d, Row: %d, Col: %d", newObstacleNumber, xMapCoordinate, yMapCoordinate);
+//                                         outputNotifView.setText(outputNotif);
+//                                     }
+//                                 }
+//        );
 
         //TEXTVIEWS
         outputNotifView = (TextView) findViewById(R.id.notifications);
@@ -1102,13 +1395,13 @@ public class MainActivity extends AppCompatActivity {
         /**
          * finally works - resets all obstacles to the original coordinates
          */
-//        Button resetObstacles = (Button) findViewById(R.id.resetObstacles);
-//        resetObstacles.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                reset(obstacleInformationTable, parentView);
-//            }
-//        });
+        Button resetObstacles = (Button) findViewById(R.id.resetObstacles);
+        resetObstacles.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reset(obstacleInformationTable, parentView);
+            }
+        });
 
         Button sendMapData = (Button) findViewById(R.id.sendMap);
         sendMapData.setOnClickListener(new View.OnClickListener() {

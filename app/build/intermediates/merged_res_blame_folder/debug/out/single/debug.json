@@ -148,12 +148,12 @@
         "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/layout/device_adapter_view.xml"
     },
     {
-        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-merged_res-40:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/mipmap-hdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-merged_res-40:/drawable_car_3.png.flat",
         "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/drawable/car_3.png"
+    },
+    {
+        "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-merged_res-40:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-main-42:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
         "merged": "/Users/ccyq/.gradle/daemon/8.2/scse.g8.remote.app-merged_res-40:/drawable_arrow_error.png.flat",

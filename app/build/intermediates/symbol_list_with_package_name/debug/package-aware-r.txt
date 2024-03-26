@@ -2759,7 +2759,6 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
-id Start
 id TOP_END
 id TOP_START
 id accelerate
@@ -3132,6 +3131,7 @@ id notification_main_column
 id notification_main_column_container
 id notifications
 id notificationsHeader
+id numberOfPreloadedObstacles
 id obstacleCoordinates
 id obstacleGenerator
 id obstacleInformation
@@ -3163,6 +3163,7 @@ id popup_window
 id popup_window_robot
 id position
 id postLayout
+id preloadObstaclesButton
 id pressed
 id progress_circular
 id progress_horizontal
@@ -3170,6 +3171,7 @@ id radio
 id ratio
 id rectangles
 id remove_robot
+id resetObstacles
 id reset_Text
 id reverseSawtooth
 id reverse_switch

@@ -65,53 +65,56 @@
             tools:layout_editor_absoluteY="853dp" />
 
         <Button
-            android:id="@+id/start_robot"
+            android:id="@+id/resetObstacles"
             android:layout_width="124dp"
             android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:backgroundTint="#7C3AED"
             android:clickable="true"
-            android:drawableLeft="@android:drawable/ic_media_play"
+            android:drawableLeft="@android:drawable/ic_popup_sync"
             android:drawableTint="@color/white"
             android:focusable="true"
             android:fontFamily="monospace"
             android:maxWidth="40dp"
             android:maxHeight="40dp"
             android:scaleType="fitCenter"
-            android:text="BEGIN"
+            android:text="RESET"
             android:textSize="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/generator" />
+            app:layout_constraintEnd_toStartOf="@+id/preloadObstaclesButton"
+            app:layout_constraintTop_toBottomOf="@+id/d_pad" />
 
-<!--        <Button-->
-<!--            android:id="@+id/resetObstacles"-->
-<!--            android:layout_width="124dp"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:adjustViewBounds="true"-->
-<!--            android:background="@null"-->
-<!--            android:backgroundTint="#7C3AED"-->
-<!--            android:clickable="true"-->
-<!--            android:drawableLeft="@android:drawable/ic_popup_sync"-->
-<!--            android:drawableTint="@color/white"-->
-<!--            android:focusable="true"-->
-<!--            android:fontFamily="monospace"-->
-<!--            android:maxWidth="40dp"-->
-<!--            android:maxHeight="40dp"-->
-<!--            android:scaleType="fitCenter"-->
-<!--            android:text="RESET"-->
-<!--            android:textSize="10dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/preloadObstaclesButton" />-->
+
+        <!--        <Button-->
+        <!--            android:id="@+id/start_robot"-->
+        <!--            android:layout_width="120dp"-->
+        <!--            android:layout_height="45dp"-->
+        <!--            android:layout_marginStart="40dp"-->
+        <!--            android:layout_marginTop="4dp"-->
+        <!--            android:adjustViewBounds="true"-->
+        <!--            android:background="@null"-->
+        <!--            android:backgroundTint="#7C3AED"-->
+        <!--            android:clickable="true"-->
+        <!--            android:drawableLeft="@android:drawable/ic_media_play"-->
+        <!--            android:drawableTint="@color/white"-->
+        <!--            android:focusable="true"-->
+        <!--            android:fontFamily="monospace"-->
+        <!--            android:maxWidth="40dp"-->
+        <!--            android:maxHeight="40dp"-->
+        <!--            android:scaleType="fitCenter"-->
+        <!--            android:text="BEGIN"-->
+        <!--            android:textSize="10dp"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/sendMap"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/generator" />-->
 
         <Button
             android:id="@+id/connect_button"
-            android:layout_width="126dp"
+            android:layout_width="120dp"
             android:layout_height="45dp"
-            android:layout_marginEnd="32dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
             android:adjustViewBounds="true"
             android:background="@null"
             android:backgroundTint="#7C3AED"
@@ -123,10 +126,22 @@
             android:maxWidth="40dp"
             android:maxHeight="40dp"
             android:scaleType="fitCenter"
-            android:text="Connectr"
+            android:text="Connect"
             android:textSize="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/sendMap"
+            app:layout_constraintTop_toBottomOf="@+id/generator" />
+
+        <Spinner
+            android:id="@+id/numberOfPreloadedObstacles"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sendMap" />
+            app:layout_constraintTop_toBottomOf="@+id/d_pad" />
 
         <Button
             android:id="@+id/discoverableBtn"
@@ -189,8 +204,9 @@
 
         <Button
             android:id="@+id/sendMap"
-            android:layout_width="124dp"
+            android:layout_width="wrap_content"
             android:layout_height="45dp"
+            android:layout_marginTop="4dp"
             android:layout_marginEnd="32dp"
             android:backgroundTint="#7555AD"
             android:drawableLeft="@android:drawable/ic_menu_send"
@@ -200,7 +216,8 @@
             android:textColor="@color/white"
             android:textSize="10dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/start_robot" />
+
+            app:layout_constraintTop_toBottomOf="@+id/generator" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/popup_window"
@@ -292,8 +309,8 @@
                 android:backgroundTint="@color/red"
                 android:fontFamily="monospace"
                 android:text="Save"
-                android:textSize="12dp"
                 android:textColor="@color/white"
+                android:textSize="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -675,16 +692,16 @@
             </TableRow>
         </TableLayout>
 
-<!--        <Spinner-->
-<!--            android:id="@+id/numberOfPreloadedObstacles"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="8dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:background="@android:drawable/btn_dropdown"-->
-<!--            android:spinnerMode="dropdown"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/d_pad" />-->
+        <!--        <Spinner-->
+        <!--            android:id="@+id/numberOfPreloadedObstacles"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="8dp"-->
+        <!--            android:layout_marginEnd="32dp"-->
+        <!--            android:background="@android:drawable/btn_dropdown"-->
+        <!--            android:spinnerMode="dropdown"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/d_pad" />-->
 
         <TableLayout
             android:id="@+id/btnTableLayout"
@@ -777,21 +794,21 @@
 
         </TableLayout>
 
-<!--        <Button-->
-<!--            android:id="@+id/preloadObstaclesButton"-->
-<!--            android:layout_width="124dp"-->
-<!--            android:layout_height="45dp"-->
-<!--            android:layout_marginTop="4dp"-->
-<!--            android:layout_marginEnd="32dp"-->
-<!--            android:backgroundTint="#7555AD"-->
-<!--            android:drawableLeft="@android:drawable/ic_menu_upload"-->
-<!--            android:drawableTint="@color/white"-->
-<!--            android:drawableTintMode="src_in"-->
-<!--            android:fontFamily="monospace"-->
-<!--            android:text="Preload"-->
-<!--            android:textSize="10dp"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/sendMap" />-->
+        <Button
+            android:id="@+id/preloadObstaclesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#7555AD"
+            android:drawableLeft="@android:drawable/ic_menu_upload"
+            android:drawableTint="@color/white"
+            android:drawableTintMode="src_in"
+            android:fontFamily="monospace"
+            android:text="Preload"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/numberOfPreloadedObstacles"
+            app:layout_constraintTop_toBottomOf="@+id/d_pad" />
 
         <ImageButton
             android:id="@+id/generateRobot"
@@ -811,169 +828,169 @@
             app:tint="#FFFFFF" />
 
 
-<!--        <TableLayout-->
-<!--            android:id="@+id/d_pad"-->
-<!--            android:layout_width="144dp"-->
-<!--            android:layout_height="144dp"-->
-<!--            android:layout_marginTop="46dp"-->
-<!--            android:layout_marginEnd="25dp"-->
-<!--            android:background="@drawable/border_4"-->
-<!--            android:gravity="center"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/start_robot">-->
+        <!--        <TableLayout-->
+        <!--            android:id="@+id/d_pad"-->
+        <!--            android:layout_width="144dp"-->
+        <!--            android:layout_height="144dp"-->
+        <!--            android:layout_marginTop="46dp"-->
+        <!--            android:layout_marginEnd="25dp"-->
+        <!--            android:background="@drawable/border_4"-->
+        <!--            android:gravity="center"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/connect_button"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/start_robot">-->
 
-<!--            <TableRow-->
-<!--                android:id="@+id/dpad_row1"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:gravity="center">-->
+        <!--            <TableRow-->
+        <!--                android:id="@+id/dpad_row1"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:gravity="center">-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowNW"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="40dp"-->
-<!--                    android:maxHeight="50dp"-->
-<!--                    android:rotation="315"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_up"-->
-<!--                    android:visibility="visible"-->
-<!--                    tools:layout_editor_absoluteX="367dp"-->
-<!--                    tools:layout_editor_absoluteY="808dp" />-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowNW"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="40dp"-->
+        <!--                    android:maxHeight="50dp"-->
+        <!--                    android:rotation="315"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_up"-->
+        <!--                    android:visibility="visible"-->
+        <!--                    tools:layout_editor_absoluteX="367dp"-->
+        <!--                    tools:layout_editor_absoluteY="808dp" />-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowForward"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxHeight="50dp"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_up"-->
-<!--                    tools:layout_editor_absoluteX="415dp"-->
-<!--                    tools:layout_editor_absoluteY="808dp" />-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowForward"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxHeight="50dp"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_up"-->
+        <!--                    tools:layout_editor_absoluteX="415dp"-->
+        <!--                    tools:layout_editor_absoluteY="808dp" />-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowNE"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="40dp"-->
-<!--                    android:maxHeight="40dp"-->
-<!--                    android:rotation="45"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_up"-->
-<!--                    android:visibility="visible"-->
-<!--                    tools:layout_editor_absoluteX="463dp"-->
-<!--                    tools:layout_editor_absoluteY="808dp" />-->
-<!--            </TableRow>-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowNE"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="40dp"-->
+        <!--                    android:maxHeight="40dp"-->
+        <!--                    android:rotation="45"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_up"-->
+        <!--                    android:visibility="visible"-->
+        <!--                    tools:layout_editor_absoluteX="463dp"-->
+        <!--                    tools:layout_editor_absoluteY="808dp" />-->
+        <!--            </TableRow>-->
 
-<!--            <TableRow-->
-<!--                android:id="@+id/dpad_row2"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:gravity="center">-->
+        <!--            <TableRow-->
+        <!--                android:id="@+id/dpad_row2"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:gravity="center">-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowLeft"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="50dp"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_left"-->
-<!--                    tools:layout_editor_absoluteX="367dp"-->
-<!--                    tools:layout_editor_absoluteY="856dp" />-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowLeft"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="50dp"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_left"-->
+        <!--                    tools:layout_editor_absoluteX="367dp"-->
+        <!--                    tools:layout_editor_absoluteY="856dp" />-->
 
-<!--                <ImageView-->
-<!--                    android:id="@+id/blank"-->
-<!--                    android:layout_width="45dp"-->
-<!--                    android:layout_height="45dp"-->
-<!--                    android:src="@color/black" />-->
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/blank"-->
+        <!--                    android:layout_width="45dp"-->
+        <!--                    android:layout_height="45dp"-->
+        <!--                    android:src="@color/black" />-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowRight"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="50dp"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_right"-->
-<!--                    tools:layout_editor_absoluteX="463dp"-->
-<!--                    tools:layout_editor_absoluteY="856dp" />-->
-<!--            </TableRow>-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowRight"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="50dp"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_right"-->
+        <!--                    tools:layout_editor_absoluteX="463dp"-->
+        <!--                    tools:layout_editor_absoluteY="856dp" />-->
+        <!--            </TableRow>-->
 
-<!--            <TableRow-->
-<!--                android:id="@+id/dpad_row3"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:gravity="center">-->
+        <!--            <TableRow-->
+        <!--                android:id="@+id/dpad_row3"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:gravity="center">-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowSW"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="40dp"-->
-<!--                    android:maxHeight="40dp"-->
-<!--                    android:rotation="225"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_up"-->
-<!--                    android:visibility="visible"-->
-<!--                    tools:layout_editor_absoluteX="367dp"-->
-<!--                    tools:layout_editor_absoluteY="904dp" />-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowSW"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="40dp"-->
+        <!--                    android:maxHeight="40dp"-->
+        <!--                    android:rotation="225"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_up"-->
+        <!--                    android:visibility="visible"-->
+        <!--                    tools:layout_editor_absoluteX="367dp"-->
+        <!--                    tools:layout_editor_absoluteY="904dp" />-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowBack"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxHeight="50dp"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_down"-->
-<!--                    tools:layout_editor_absoluteX="415dp"-->
-<!--                    tools:layout_editor_absoluteY="904dp" />-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowBack"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxHeight="50dp"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_down"-->
+        <!--                    tools:layout_editor_absoluteX="415dp"-->
+        <!--                    tools:layout_editor_absoluteY="904dp" />-->
 
-<!--                <ImageButton-->
-<!--                    android:id="@+id/arrowSE"-->
-<!--                    android:layout_width="35dp"-->
-<!--                    android:layout_height="35dp"-->
-<!--                    android:adjustViewBounds="true"-->
-<!--                    android:background="@null"-->
-<!--                    android:clickable="true"-->
-<!--                    android:focusable="true"-->
-<!--                    android:maxWidth="40dp"-->
-<!--                    android:maxHeight="40dp"-->
-<!--                    android:rotation="135"-->
-<!--                    android:scaleType="fitCenter"-->
-<!--                    android:src="@drawable/arrow_up"-->
-<!--                    android:visibility="visible"-->
-<!--                    tools:layout_editor_absoluteX="463dp"-->
-<!--                    tools:layout_editor_absoluteY="904dp" />-->
-<!--            </TableRow>-->
+        <!--                <ImageButton-->
+        <!--                    android:id="@+id/arrowSE"-->
+        <!--                    android:layout_width="35dp"-->
+        <!--                    android:layout_height="35dp"-->
+        <!--                    android:adjustViewBounds="true"-->
+        <!--                    android:background="@null"-->
+        <!--                    android:clickable="true"-->
+        <!--                    android:focusable="true"-->
+        <!--                    android:maxWidth="40dp"-->
+        <!--                    android:maxHeight="40dp"-->
+        <!--                    android:rotation="135"-->
+        <!--                    android:scaleType="fitCenter"-->
+        <!--                    android:src="@drawable/arrow_up"-->
+        <!--                    android:visibility="visible"-->
+        <!--                    tools:layout_editor_absoluteX="463dp"-->
+        <!--                    tools:layout_editor_absoluteY="904dp" />-->
+        <!--            </TableRow>-->
 
-<!--        </TableLayout>-->
+        <!--        </TableLayout>-->
 
 
         <TableLayout
@@ -981,14 +998,12 @@
             android:layout_width="215dp"
             android:layout_height="150dp"
 
+            android:layout_marginTop="8dp"
             android:background="@drawable/border_4"
             android:gravity="center_vertical"
             app:layout_constraintLeft_toLeftOf="@id/obstacle_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sendMap"
 
-
-            >
+            app:layout_constraintTop_toBottomOf="@id/sendMap">
 
             <TableRow
                 android:id="@+id/dpad_row1"
@@ -1072,16 +1087,15 @@
                     tools:layout_editor_absoluteY="856dp" />
 
                 <Button
-                    android:id="@+id/Start"
+                    android:id="@+id/start_robot"
+                    android:layout_width="65dp"
+                    android:layout_height="match_parent"
+                    android:src="#E40F0F"
                     android:text="Start"
                     android:textAlignment="center"
                     android:textColor="#FFF"
                     android:textSize="9dp"
-                    app:fontFamily="monospace"
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:src="#E40F0F"
-                    />
+                    app:fontFamily="monospace" />
 
 
                 <ImageButton

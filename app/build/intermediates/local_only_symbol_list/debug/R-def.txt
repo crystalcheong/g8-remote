@@ -71,7 +71,6 @@ drawable surface
 font font_family
 font main_font
 id FirstFragment
-id Start
 id action_settings
 id appBarLayout
 id arrowBack
@@ -138,6 +137,7 @@ id nav_graph
 id nav_host_fragment_content_main
 id notifications
 id notificationsHeader
+id numberOfPreloadedObstacles
 id obstacleCoordinates
 id obstacleGenerator
 id obstacleInformation
@@ -149,7 +149,9 @@ id path_Text
 id popup_robotText
 id popup_window
 id popup_window_robot
+id preloadObstaclesButton
 id remove_robot
+id resetObstacles
 id reset_Text
 id reverse_switch
 id robot_Text
